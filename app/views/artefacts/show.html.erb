@@ -1,4 +1,4 @@
-<div class="page-header">
+<div class="54page-header">
   <%= link_to artefacts_path, :class => 'btn btn-default' do %>
     <span class="glyphicon glyphicon-list-alt"></span>
     Back
@@ -19,10 +19,10 @@
 
   <dt>Technique:</dt>
   <dd><%= @artefact.technique %></dd>
-  <%= Attachment.all.length%>
+
   <% @artefact.attachments.each do |a|%>
-    <dt>Attachment:</dt>
-    <dd><%= a.asset %></dd>
+    <dt>Attachment</dt>
+    <dd><%= image_tag a.asset.url :thumb %></dd>
   <% end %>
   
   <dt>Team:</dt>

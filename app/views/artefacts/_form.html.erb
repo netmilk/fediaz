@@ -30,7 +30,18 @@
     <div class="form-group">
       <%= a.label :asset, :class => "col-sm-2 control-label" %>
       <div class="col-sm-10">
-        <%= a.file_field :asset, :title => "Browse file" %>
+        <% unless a.object.asset.blank? %>
+          <%= image_tag a.object.asset.url :thumb %>
+          <%= a.file_field :asset, :title => "Change file" %>
+          <%= link_to new_artefact_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-remove"></span>
+            Delete image
+          <% end %>
+
+        <% else %>
+          <%= a.file_field :asset, :title => "Add file" %>
+        <% end %>
+
       </div>
     </div>
   <%end%>
