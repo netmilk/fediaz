@@ -7,6 +7,6 @@ ready = ->
   $('input[type=file]').bootstrapFileInput()
 
 $(document).ready(ready)
-$(document).on('page:load', ready)  alert 'booboo'
+$(document).on('page:load', ready)
 
 

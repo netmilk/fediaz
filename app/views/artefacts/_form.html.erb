@@ -33,11 +33,10 @@
         <% unless a.object.asset.blank? %>
           <%= image_tag a.object.asset.url :thumb %>
           <%= a.file_field :asset, :title => "Change file" %>
-          <%= link_to new_artefact_path, :class => 'btn btn-primary' do %>
+          <%= link_to a.object, method: :delete, :class => 'btn btn-default', data: { confirm: 'Are you sure?' }, remote: true, method: :delete do %>
             <span class="glyphicon glyphicon-remove"></span>
             Delete image
           <% end %>
-
         <% else %>
           <%= a.file_field :asset, :title => "Add file" %>
         <% end %>
