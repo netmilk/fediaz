@@ -1,0 +1,13 @@
+<div class="page-header">
+  <%= link_to artefact_attachments_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to [@artefact, @attachment], :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Show
+  <% end %>
+  <h1>Editing attachment for <%= @artefact.name%></h1>
+</div>
+
+<%= render 'form' %>

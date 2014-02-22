@@ -1,6 +1,8 @@
 Fediaz::Application.routes.draw do
-  resources :artefacts
-  resources :attachments
+  get "labrary/index"
+  resources :artefacts do 
+    resources :attachments
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
