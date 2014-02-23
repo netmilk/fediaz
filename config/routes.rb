@@ -1,5 +1,5 @@
 Fediaz::Application.routes.draw do
-  get "labrary/index"
+  get "library/index"
   resources :artefacts do 
     resources :attachments
   end
@@ -8,7 +8,7 @@ Fediaz::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'library#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
