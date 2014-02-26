@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218140618) do
+ActiveRecord::Schema.define(version: 20140222110858) do
 
   create_table "artefacts", force: true do |t|
     t.string   "name"
@@ -22,15 +22,13 @@ ActiveRecord::Schema.define(version: 20140218140618) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "artefacts_attachments", force: true do |t|
-    t.integer "attachment_id"
-    t.integer "artefact_id"
+    t.boolean  "published"
   end
 
   create_table "attachments", force: true do |t|
     t.string   "name"
+    t.integer  "weight"
+    t.integer  "artefact_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "asset_file_name"

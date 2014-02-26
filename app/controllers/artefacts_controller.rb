@@ -1,6 +1,7 @@
 class ArtefactsController < ApplicationController
   before_action :set_artefact, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
   # GET /artefacts
   # GET /artefacts.json
   def index
@@ -71,7 +72,7 @@ class ArtefactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artefact_params
-      params.require(:artefact).permit(:name, :location, :technique, :team, :description, {:attachments_attributes => [:asset]} )
+      params.require(:artefact).permit(:name, :location, :technique, :team, :published, :description, {:attachments_attributes => [:asset]} )
     end
 
 

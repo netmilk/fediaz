@@ -1,0 +1,66 @@
+<div id='library'>
+  <div id="colapse-control">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+      Collapsible Group Item #1
+    </a>
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+      Collapsible Group Item #2
+    </a>
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+      Collapsible Group Item #3
+    </a>
+  </div>
+  <div class="panel-group" id="accordion">
+    <div class="panel panel-default">
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          <% @artefacts.each do |artefact|%>
+            <%= artefact.name%>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div id="collapseTwo" class="panel-collapse collapse">
+          
+          <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+            <% @artefact.attachments.each_with_index do |a,i|%>
+              <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="carousel-nav <%="active" if i == 0%>">
+              </li>
+            <%end%>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              <% @artefact.attachments.each_with_index do |a,i|%>
+                <div class="item <%="active" if i == 0%>">
+                  <div class="static-background" style="background-image:url('<%=a.asset.url %>')">
+                  Containing content
+                  </div>
+                </div>
+              <%end%>
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+          <div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div id="collapseThree" class="panel-collapse collapse">
+        <div class="panel-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

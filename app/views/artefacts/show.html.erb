@@ -7,6 +7,11 @@
     <span class="glyphicon glyphicon-pencil"></span>
     Edit
   <% end %>
+  <%= link_to artefact_attachments_path(@artefact.id), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-paperclip"></span>
+    Edit Attachments
+  <% end %>
+
   <h1>Show artefact</h1>
 </div>
 
@@ -14,21 +19,24 @@
   <dt>Name:</dt>
   <dd><%= @artefact.name %></dd>
 
+  <dt>Description:</dt>
+  <dd><%= @artefact.description %></dd>
+
   <dt>Location:</dt>
   <dd><%= @artefact.location %></dd>
 
   <dt>Technique:</dt>
   <dd><%= @artefact.technique %></dd>
+  
+  <dt>Team:</dt>
+  <dd><%= @artefact.team %></dd>
+
+  <dt>Published</dt>
+  <dd><%= @artefact.published %></dd>
 
   <% @artefact.attachments.each do |a|%>
     <dt>Attachment</dt>
     <dd><%= image_tag a.asset.url :thumb %></dd>
   <% end %>
-  
-  <dt>Team:</dt>
-  <dd><%= @artefact.team %></dd>
-
-  <dt>Description:</dt>
-  <dd><%= @artefact.description %></dd>
 
 </dl>

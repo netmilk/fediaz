@@ -15,6 +15,8 @@
             <th>Technique</th>
             <th>Team</th>
             <th>Description</th>
+            <th>Published</th>
+            <th>Attachments</th>
             <th></th>
         <th></th>
         <th></th>
@@ -28,6 +30,8 @@
             <td><%= artefact.technique %></td>
             <td><%= artefact.team %></td>
             <td><%= artefact.description %></td>
+            <td><%= artefact.published %></td>
+            <td><%= link_to artefact.attachments.length, artefact_attachments_path(artefact.id)%></td>
             <td><%= link_to 'Show', artefact %></td>
         <td><%= link_to 'Edit', edit_artefact_path(artefact) %></td>
         <td><%= link_to 'Destroy', artefact, method: :delete, data: { confirm: 'Are you sure?' } %></td>

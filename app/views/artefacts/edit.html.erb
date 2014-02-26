@@ -7,6 +7,10 @@
     <span class="glyphicon glyphicon-info-sign"></span>
     Show
   <% end %>
+  <%= link_to artefact_attachments_path(@artefact.id), :class => 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-paperclip"></span>
+    Edit Attachments
+  <% end %>
   <h1>Editing artefact</h1>
 </div>
 
